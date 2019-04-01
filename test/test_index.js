@@ -46,5 +46,14 @@ describe('Suite 1', function () {
 
     });
 
+    it('should fail2', function (done) {
+        chai.request(app)
+            .get('/')
+            .end(function (err,res) {
+                assert.equal(res.status, 500);
+                done();
+            });
+
+    });
 
 });
